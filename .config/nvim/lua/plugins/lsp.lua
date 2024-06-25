@@ -12,18 +12,12 @@ return {
       -- Install none-ls for diagnostics, code actions, and formatting
       "nvimtools/none-ls.nvim",
 
-      -- Install neodev for better nvim configuration and plugin authoring via lsp configurations
-      "folke/neodev.nvim",
-
       -- Progress/Status update for LSP
       { "j-hui/fidget.nvim" },
     },
     config = function()
       local null_ls = require("null-ls")
       -- local map_lsp_keybinds = require("user.keymaps").map_lsp_keybinds -- Has to load keymaps before pluginslsp
-
-      -- Use neodev to configure lua_ls in nvim directories - must load before lspconfig
-      require("neodev").setup()
 
       -- Setup mason so it can manage 3rd party LSP servers
       require("mason").setup({
@@ -88,9 +82,7 @@ return {
         },
         prismals = {},
         sqlls = {},
-        tailwindcss = {
-          -- filetypes = { "reason" },
-        },
+        tailwindcss = { },
         tsserver = {
           settings = {
             experimental = {
@@ -172,7 +164,7 @@ return {
           -- 		return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs", ".eslintrc.json" })
           -- 	end,
           -- }),
-          --
+
           -- -- code actions
           -- code_actions.eslint_d.with({
           -- 	condition = function(utils)
