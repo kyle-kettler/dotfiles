@@ -1,7 +1,10 @@
 return {
   "S1M0N38/love2d.nvim",
   cmd = "LoveRun",
-  opts = {},
+  opts = {
+    path_to_love_bin = "/Applications/love.app/Contents/MacOS/love",
+    restart_on_save = true,
+  },
   keys = {
     { "<leader>v",  ft = "lua",          desc = "LÖVE" },
     { "<leader>vv", "<cmd>LoveRun<cr>",  ft = "lua",   desc = "Run LÖVE" },
