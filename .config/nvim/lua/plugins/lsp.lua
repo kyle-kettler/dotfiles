@@ -112,7 +112,7 @@ return {
       ---@diagnostic disable-next-line: unused-local
       local on_attach = function(_client, buffer_number)
         -- Pass the current buffer to map lsp keybinds
-        map_lsp_keybinds(buffer_number)
+        -- map_lsp_keybinds(buffer_number)
 
         -- Create a command `:Format` local to the LSP buffer
         vim.api.nvim_buf_create_user_command(buffer_number, "Format", function(_)
