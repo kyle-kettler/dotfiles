@@ -1,7 +1,7 @@
 return {
-  {
-    "github/copilot.vim",
-  },
+  -- {
+  --   "github/copilot.vim",
+  -- },
   -- {
   --   "zbirenbaum/copilot-cmp",
   --   event = { "BufEnter" },
