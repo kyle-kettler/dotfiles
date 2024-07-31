@@ -3,7 +3,7 @@ return {
   cmd = "LoveRun",
   opts = {
     path_to_love_bin = "/Applications/love.app/Contents/MacOS/love",
-    restart_on_save = true,
+    restart_on_save = false,
   },
   keys = {
     { "<leader>v",  ft = "lua",          desc = "LÖVE" },
