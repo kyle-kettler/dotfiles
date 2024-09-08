@@ -10,3 +10,5 @@ vim.keymap.set("n", "<leader>rn", ":IncRename ")
 
 vim.keymap.set("n", "<leader>qab", ":%bd|e#|bd#<CR>")
 
+vim.keymap.set("n", "<leader>fd", vim.diagnostic.open_float, {})
+

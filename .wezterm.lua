@@ -12,12 +12,12 @@ end
 
 -- This is where you actually apply your config choices
 -- config.color_scheme = 'Kanagawa Dragon(Gogh)'
-config.color_scheme = 'kanagawabones'
+config.color_scheme = 'Gruvbox Dark (Gogh)'
 
-config.window_background_opacity = 0.85
-config.macos_window_background_blur = 10
+config.window_background_opacity = 1
+-- config.macos_window_background_blur = 10
 
-config.font_size = 15
+config.font_size = 16
 
 config.line_height = 1.1
 
@@ -107,6 +107,29 @@ for i = 1, 8 do
     action = wezterm.action.ActivateTab(i - 1),
   })
 end
+
+wezterm.on('user-var-changed', function(window, pane, name, value)
+    local overrides = window:get_config_overrides() or {}
+    if name == "ZEN_MODE" then
+        local incremental = value:find("+")
+        local number_value = tonumber(value)
+        if incremental ~= nil then
+            while (number_value > 0) do
+                window:perform_action(wezterm.action.IncreaseFontSize, pane)
+                number_value = number_value - 1
+            end
+            overrides.enable_tab_bar = false
+        elseif number_value < 0 then
+            window:perform_action(wezterm.action.ResetFontSize, pane)
+            overrides.font_size = nil
+            overrides.enable_tab_bar = true
+        else
+            overrides.font_size = number_value
+            overrides.enable_tab_bar = false
+        end
+    end
+    window:set_config_overrides(overrides)
+end)
 
 -- and finally, return the configuration to wezterm
 return config

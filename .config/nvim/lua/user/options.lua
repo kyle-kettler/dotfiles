@@ -7,8 +7,8 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.expandtab = true
 
-vim.opt.spell = true
-vim.opt.spelllang = "en_us"
+-- vim.opt.spell = true
+-- vim.opt.spelllang = "en_us"
 
 -- Enable auto indenting and set it to spaces
 vim.opt.smartindent = true
