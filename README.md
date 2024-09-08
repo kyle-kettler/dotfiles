@@ -30,3 +30,8 @@ then use GNU stow to create symlinks
 ```
 $ stow .
 ```
+
+To add a new plugin to Neovim
+```
+$ stow --adopt .
+```
