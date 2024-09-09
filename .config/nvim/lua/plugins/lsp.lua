@@ -83,7 +83,7 @@ return {
         prismals = {},
         sqlls = {},
         tailwindcss = { },
-        tsserver = {
+        ts_ls = {
           settings = {
             experimental = {
               enableProjectDiagnostics = true,
@@ -119,7 +119,7 @@ return {
           vim.lsp.buf.format({
             filter = function(format_client)
               -- Use Prettier to format TS/JS if it's available
-              return format_client.name ~= "tsserver" or not null_ls.is_registered("prettier")
+              return format_client.name ~= "ts_ls" or not null_ls.is_registered("prettier")
             end,
           })
         end, { desc = "LSP: Format current buffer with LSP" })
