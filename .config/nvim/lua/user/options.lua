@@ -43,7 +43,7 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 8
 
 -- Place a column line
-vim.opt.colorcolumn = "120"
+vim.opt.colorcolumn = "150"
 
 vim.opt.guicursor = {
   "n-v-c:block",  -- Normal, visual, command-line: block cursor
